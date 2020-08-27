@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block head %}
+  {% if animations %}
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='animations.css') }}">
+  {% endif %}
+{% endblock %}
+{% block content %}
+  <div class="fill-screen title-page">
+    <div class="title-content">
+      <h2>Kim Helman</h2>
+      <h1>Registered Sign Language Interpreter</h1>
+      <div class="button-container animation-4">
+        <a class="button orange">Get a Quote!</a>
+        <a class="button">Contact Me</a>
+      </div>
+    </div>
+  </div>
+  <div class="fill-screen top home-container animation">
+    <div id="about" class="about-container fade-in">
+      <img class="pp" src="{{ url_for('static', filename='images/kim_pp.jpg') }}" alt="A picture of Kim.">
+      <p class="about-description">
+        I am a registered Registered Sign Language Interpreter based in Wokingham, Berkshire. 
+        I provide interpretation services between British Sign Language (BSL) and English 
+        (Spoken or Written). My interest in British Sign Language began after attending a basic 
+        BSL course in 2009. Since then I have worked my way through the Signature NVQ levels in 
+        British Sign Language.  Whilst working as a Trainee Interpreter, I achieved the SLI 
+        Advanced Diploma in BSL-English Interpreting and Translation in 2017 and registered 
+        with NRCPD as a Registered Sign Language Interpreter (RSLI). In addition to the formal 
+        qualifications, I have completed workshops and courses including Sign Language Linguistics 
+        taught by Rachel Sutton-Spence, Theatre Sign's Introduction to Theatre Interpreting and 
+        Voices-Off Weekends run by Signamic. I enjoy volunteering and have been fortunate enough 
+        to work with organisations such as Sense and at national events including Deaf World, 
+        Reading Festival and London Pride.
+        <br><br>
+        I have a BSc (hons) degree in Applied Psychology and Sociology from the University 
+        of Surrey and have worked in non-interpreting roles in Mental Health and Adult Social 
+        Care settings since 2004.
+        <br><br>
+        My other interests include amateur dramatics and singing, tending to my garden with 
+        the 'assistance' of my cats and cycling. In fact I am so well known for riding my bike 
+        that my sign name in the Deaf community is the sign for 'cycling'. 
+        <br><br>
+        Punctuality and preparation are important to me and I am professional and flexible 
+        in my approach.
+        <br><br>
+        Please do not hesitate to contact me if you would like to ask any questions. I'm 
+        always happy to discuss interpreting and if I am not able to assist, I am part of a 
+        wide network of professional interpreters so I will usually be able to put you in 
+        touch with someone who can meet your requirements.
+      </p>
+    </div>
+    <div class="logos animation">
+      <div id="asli" class="logo-container fade-in">
+        <img class="logo" src="{{ url_for('static', filename='images/asli_logo.jpg') }}" alt="ASLI Logo">
+        <p>ASLI Member</p>
+      </div>
+      <div id="nrcpd" class="logo-container fade-in">
+        <img class="logo" src="{{ url_for('static', filename='images/nrcpd_logo.jpg') }}" alt="NRCPD Logo" >
+        <p>
+          NRCPD Registered
+          <br>
+          <a href="https://portal.nrcpd.org.uk/search/more_info?id=2411" target="_blank">(Reg Number: 101589X)</a>
+        </p>
+      </div>
+      <div id="check" class="logo-container fade-in">
+        <img class="logo" src="{{ url_for('static', filename='images/dbs_check.png') }}" alt="Check Mark">
+        <p>DBS Checked</p>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+{% block scripts %}
+  {% if animations %}
+    <script>
+      //fades in initial logo
+      logo = document.getElementById('header-logo')
+      function fadeIn() {
+        logo.style.opacity = "1"
+        logo.style.visibility = "visible"
+      }
+      setTimeout(fadeIn, 1000)
+    </script>
+  {% endif %}
+  <script>
+    $(document).ready(function() {
+
+      function findDistance(el) {
+        var distanceToTop = $(el).offset().top - $(window).scrollTop()
+        return distanceToTop
+      }
+      function showEl(el) {
+        if (findDistance(el) < 500) {
+          $(el).css(
+            {
+              opacity: 1,
+              visibility: 'visible',
+              transform: 'none',
+            }
+          )
+        }
+      }
+      document.addEventListener("scroll", function() { showEl('#about') })
+      document.addEventListener("scroll", function() { showEl('#asli') })
+      document.addEventListener("scroll", function() { showEl('#nrcpd') })
+      document.addEventListener("scroll", function() { showEl('#check') })
+
+    })
+  </script>
+{% endblock %}

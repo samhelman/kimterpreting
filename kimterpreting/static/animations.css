@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+
+.header-logo {
+  font-size: calc(1em + 10vw);
+  left: 50%;
+  transform: translate(-50%, +150%);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 3s ease;
+  animation-name: loadAnimation;
+  animation-duration: 2s;
+  animation-delay: 4s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.header-links-container {
+  visibility: hidden;
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-delay: 4s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+header {
+  background-color: transparent;
+  animation-name: headerFadeIn;
+  animation-duration: 3s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+}
+
+.title-content {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 3s ease;
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-delay: 6s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.animation-4 {
+  visibility: hidden;
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 3s;
+  animation-delay: 8s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes loadAnimation {
+  0% {
+
+  }
+  100% {
+    font-size: 3em;
+    left: 5vw;
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes headerFadeIn {
+  100% {
+    background-color: rgba(0,0,0,0.3);
+    box-shadow: 10px 0px 5px black;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .header-logo {
+    transform: translate(-50%, +70%);
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .header-logo {
+    transform: translate(-50%, +50%);
+  }
+}

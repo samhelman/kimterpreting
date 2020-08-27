@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      //disable or enable scrolling
+      function disableScroll() { 
+        // Get the current page scroll position 
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop; 
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft, 
+        // if any scroll is attempted, set this to the previous value 
+        window.onscroll = function() { 
+          window.scrollTo(scrollLeft, scrollTop); 
+        }; 
+      }  
+
+      function enableScroll() { 
+        window.onscroll = function() {}; 
+      };
+    </script>
+    {% if animations %}
+      <script>disableScroll()</script>
+    {% endif %}
+    {% if title %}
+      <title>Kimterpreting - {{ title }}</title>
+    {% else %}
+      <title>Kimterpreting</title>
+    {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    {% block head %}
+    {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1 id="header-logo" class="header-logo">Kimterpreting</h1>
+        <div class="header-links-container">
+          <img id="header-menu" class="header-menu" src="{{ url_for('static', filename='icons/menu.svg') }}">
+          <ul class="header-links">
+            <li class="first-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li>
+            <li><a class="nav-link" href="{{ url_for('terms') }}">Terms and Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+    
+    <div id="mobile-navigation" class="mobile-navigation">
+      <img id="menu-close" class="menu-close" src="{{ url_for('static', filename='icons/close.svg') }}">
+      <ul class="mobile-links">
+        <li class="first-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+        <li><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li>
+        <li><a class="nav-link" href="{{ url_for('terms') }}">Terms and Conditions</a></li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>
+        Copyright &#169; 
+        <a href="{{ url_for('home') }}">Kimterpreting</a> 
+        All Rights Reserved
+      </p>
+    </footer>
+
+    <script>
+      //event listeners
+      menuIcon = document.getElementById('header-menu')
+      closeIcon = document.getElementById('menu-close')
+      menuIcon.addEventListener('click', toggleNavWindow)
+      closeIcon.addEventListener('click', toggleNavWindow)
+
+
+
+      //opens mobile navigation window
+      function toggleNavWindow() {
+        mobileMenu = document.getElementById('mobile-navigation')
+        if (mobileMenu.style.visibility != "visible") {
+          mobileMenu.style.visibility = "visible"
+          mobileMenu.style.opacity = "1"
+          menuIcon.style.visibility = "hidden"
+          menuIcon.style.opacity = "0"
+          disableScroll()
+        } else {
+          mobileMenu.style.visibility = "hidden"
+          mobileMenu.style.opacity = "0"
+          menuIcon.style.visibility = "visible"
+          menuIcon.style.opacity = "1"
+          enableScroll()
+        }
+        if (mobileMenu.style.display != "none") {
+          mobileMenu.style.display = "initial"
+        } else {
+          mobileMenu.style.display = "none"
+        }
+      }
+      setTimeout(enableScroll, 10000)
+
+
+    </script>
+    {% block scripts %}
+    {% endblock scripts %}
+  </body>
+  
+</html>
