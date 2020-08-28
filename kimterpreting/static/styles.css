@@ -142,20 +142,21 @@ header {
 
 .title-content {
   color: white;
-  position: fixed;
   padding: 0 5vw;
-  top: 30vh;
+  position: fixed;
+  top: 100px;
   text-align: center;
+  width: 100vw;
 }
 
 .title-content h1 {
-  font-size: calc(1.2em + 4vw);
+  font-size: calc(1.2em + 2vw + 2vh);
 }
 
 .title-content h2 {
   font-family: 'Cormorant', serif;
   font-weight: normal;
-  font-size: calc(1em + .4vw);
+  font-size: calc(1em + .2vw + .2vh);
 }
 
 .button-container {
@@ -173,6 +174,7 @@ header {
   padding: 5px 10px;
   border: 2px solid white;
   border-radius: 20px/50%;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
 
 .background-highlight {
@@ -189,14 +191,11 @@ header {
   color: black;
 }
 
-.home-container {
-  padding: 5vh 5vw;
-}
-
-.about-container {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 5vh 5vw;
 }
 
 .pp {
@@ -209,7 +208,7 @@ header {
 }
 
 .about-description {
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: justify;
   color: rgb(50,50,50);
   border-top: 1px solid rgb(50,50,50);
@@ -225,7 +224,7 @@ header {
 }
 
 .logo-container {
-  padding: 5vh 5vw;
+  padding: 0 5vw 5vh 5vw;
 }
 
 .logo {
@@ -236,13 +235,14 @@ header {
 }
 
 .logo-container p {
-  font-size: 1.2em;
+  font-size: 1em;
   color: indigo;
   text-align: center;
   font-weight: bold;
 }
 
 footer {
+  position: relative;
   background-color: black;
   width: 100%;
   height: 20vh;
@@ -250,6 +250,7 @@ footer {
   flex-direction: row;
   justify-items: center;
   align-items: center;
+  z-index: 101;
 }
 
 footer p {
@@ -263,10 +264,59 @@ footer p {
   opacity: 0;
   visibility: hidden;
   transform: translateY(20vh);
-  transition: opacity .5s linear, visibility 1s linear, transform 1s ease-out;
+  transition: opacity 1s linear, visibility 1s linear, transform .5s ease-out;
 }
 
-@media only screen and (min-width: 650px) {
+.rates-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vh 2vw;
+}
+
+.rates-container h3, .rates-container h4 {
+  text-align: center;
+  padding: 5px;
+}
+
+.rates-container h4 {
+  color: indigo;
+}
+
+.rates-content {
+  padding: 2vh 10vw;
+}
+
+.center {
+  text-align: center;
+}
+
+.border {
+  background-color: rgb(50,50,50);
+  width: 100%;
+  height: 1px;
+}
+
+.mb {
+  margin-bottom: 2vh;
+}
+
+@media only screen and (min-width: 420px) {
+  .button-container {
+    display: inline-flex;
+    margin: auto;
+    flex-direction: row;
+  }
+  .rates-container {
+    flex-direction: row;
+  }
+  .border {
+    height: 80px;
+    width: 1px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
 
   .header-menu {
     display: none;
@@ -282,23 +332,22 @@ footer p {
   }
 
   .title-content {
+    top: 40vh;
     text-align: left;
-    top: auto;
-    bottom: 12vw;
   }
 
   .title-content h2 {
     margin: 0 .45vw;
   }
 
-  .button-container {
-    flex-direction: row;
-  }
   .button:hover {
     background-color: white;
     border-color: white;
     color: indigo;
     cursor: pointer;
+  }
+  .button.orange:hover {
+    border-color: indigo;
   }
   .logos {
     display: inline-flex;

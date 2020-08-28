@@ -15,8 +15,28 @@
       </div>
     </div>
   </div>
-  <div class="fill-screen top home-container animation">
-    <div id="about" class="about-container fade-in">
+  <div class="fill-screen top">
+    <div id="rates" class="container fade-in">
+      <h1>Rates</h1>
+      <div class="rates-container">
+        <div class="rates-content">
+          <h3>Half Day</h3>
+          <h4>£130 - £160</h4>
+        </div>
+        <div class="border"></div>
+        <div class="rates-content">
+          <h3>Full Day</h3>
+          <h4>£240 - £290</h4>
+        </div>
+      </div>
+      <p class="center mb">
+        Every interpreting assignment is different; rates will vary depending on many 
+        factors such as the amount of preparation required, timing of the assignment 
+        and location. The above rates should be taken as a rough guide.
+      </p>
+      <a class="button orange mb">Get a FREE Quote Now!</a>
+    </div>
+    <div id="about" class="container fade-in">
       <img class="pp" src="{{ url_for('static', filename='images/kim_pp.jpg') }}" alt="A picture of Kim.">
       <p class="about-description">
         I am a registered Registered Sign Language Interpreter based in Wokingham, Berkshire. 
@@ -49,7 +69,7 @@
         touch with someone who can meet your requirements.
       </p>
     </div>
-    <div class="logos animation">
+    <div class="logos">
       <div id="asli" class="logo-container fade-in">
         <img class="logo" src="{{ url_for('static', filename='images/asli_logo.jpg') }}" alt="ASLI Logo">
         <p>ASLI Member</p>
@@ -59,7 +79,7 @@
         <p>
           NRCPD Registered
           <br>
-          <a href="https://portal.nrcpd.org.uk/search/more_info?id=2411" target="_blank">(Reg Number: 101589X)</a>
+          <a href="https://portal.nrcpd.org.uk/search/more_info?id=2411" target="_blank">(Reg. Number: 101589X)</a>
         </p>
       </div>
       <div id="check" class="logo-container fade-in">
@@ -72,6 +92,7 @@
 {% block scripts %}
   {% if animations %}
     <script>
+      disableScroll()
       //fades in initial logo
       logo = document.getElementById('header-logo')
       function fadeIn() {
@@ -79,6 +100,7 @@
         logo.style.visibility = "visible"
       }
       setTimeout(fadeIn, 1000)
+      setTimeout(enableScroll, 10000)
     </script>
   {% endif %}
   <script>
@@ -89,7 +111,7 @@
         return distanceToTop
       }
       function showEl(el) {
-        if (findDistance(el) < 500) {
+        if (findDistance(el) < .95 * $(window).height()) {
           $(el).css(
             {
               opacity: 1,
@@ -99,11 +121,17 @@
           )
         }
       }
-      document.addEventListener("scroll", function() { showEl('#about') })
-      document.addEventListener("scroll", function() { showEl('#asli') })
-      document.addEventListener("scroll", function() { showEl('#nrcpd') })
-      document.addEventListener("scroll", function() { showEl('#check') })
-
+      setTimeout
+      (
+        function() {
+          document.addEventListener("scroll", function() { showEl('#rates') })
+          document.addEventListener("scroll", function() { showEl('#about') })
+          document.addEventListener("scroll", function() { showEl('#asli') })
+          document.addEventListener("scroll", function() { showEl('#nrcpd') })
+          document.addEventListener("scroll", function() { showEl('#check') })
+        },
+        10000
+      )
     })
   </script>
 {% endblock %}

@@ -9,6 +9,10 @@ def home_animations():
 def home():
   return render_template('home.html', title="Home", animations=False)
 
+@app.route('/about')
+def about():
+  return "About"
+
 @app.route('/contact')
 def contact():
   return "Contact"
