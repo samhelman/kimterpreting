@@ -159,7 +159,8 @@ font-family: 'Cormorant', serif;
   color: white;
   padding: 0 5vw;
   position: fixed;
-  top: 100px;
+  top: 50%;
+  transform: translateY(-50%);
   text-align: center;
   width: 100vw;
 }
@@ -348,7 +349,6 @@ footer p {
   }
 
   .title-content {
-    top: 40vh;
     text-align: left;
   }
 
