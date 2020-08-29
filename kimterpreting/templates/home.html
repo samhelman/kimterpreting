@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block head %}
   {% if animations %}
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='animations.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='animations.css') }}">
   {% endif %}
 {% endblock %}
 {% block content %}
@@ -15,10 +15,10 @@
       </div>
     </div>
   </div>
-  <div class="fill-screen top">
-    <div id="rates" class="container fade-in">
-      <h1>Rates</h1>
-      <div class="rates-container">
+  <div id="main-content" class="fill-screen top">
+    <div class="container">
+      <h1 id="rates" class="fade-in">Rates</h1>
+      <div id="rates-container" class="rates-container fade-in">
         <div class="rates-content">
           <h3>Half Day</h3>
           <h4>£130 - £160</h4>
@@ -29,12 +29,12 @@
           <h4>£240 - £290</h4>
         </div>
       </div>
-      <p class="center mb">
+      <p id="rates-disclaimer" class="center mb fade-in">
         Every interpreting assignment is different; rates will vary depending on many 
         factors such as the amount of preparation required, timing of the assignment 
         and location. The above rates should be taken as a rough guide.
       </p>
-      <a class="button orange mb">Get a FREE Quote Now!</a>
+      <a id="rates-button" class="button orange mb fade-in">Get a FREE Quote Now!</a>
     </div>
     <div id="about" class="container fade-in">
       <img class="pp" src="{{ url_for('static', filename='images/kim_pp.jpg') }}" alt="A picture of Kim.">
@@ -121,17 +121,30 @@
           )
         }
       }
-      setTimeout
-      (
-        function() {
-          document.addEventListener("scroll", function() { showEl('#rates') })
-          document.addEventListener("scroll", function() { showEl('#about') })
-          document.addEventListener("scroll", function() { showEl('#asli') })
-          document.addEventListener("scroll", function() { showEl('#nrcpd') })
-          document.addEventListener("scroll", function() { showEl('#check') })
-        },
-        10000
-      )
+      document.addEventListener("scroll", function() { showEl('#about') })
+      document.addEventListener("scroll", function() { showEl('#asli') })
+      document.addEventListener("scroll", function() { showEl('#nrcpd') })
+      document.addEventListener("scroll", function() { showEl('#check') })
+      document.addEventListener("scroll", function() { showEl('#rates') })
+      document.addEventListener("scroll", function() { showEl('#rates-container') })
+      document.addEventListener("scroll", function() { showEl('#rates-disclaimer') })
+      document.addEventListener("scroll", function() { showEl('#rates-button') })
+
+      function getHeightAsInt(el) {
+        var height = $(el).css("height")
+        var height = height.replace('px', '')
+        var height = parseFloat(height)
+        return height
+      }
+      function isTopOfWindow(el) {
+        if (findDistance(el) <= 0) {
+          $('#header').addClass('secondary-header').removeClass('initial-fade-in')
+        } else if (findDistance(el) >= getHeightAsInt('#header')) {
+          $('#header').removeClass('secondary-header')
+        }
+      }
+      document.addEventListener("scroll", function() { isTopOfWindow('#main-content') })
+
     })
   </script>
 {% endblock %}

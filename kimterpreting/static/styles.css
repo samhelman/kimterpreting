@@ -20,7 +20,7 @@ font-family: 'Cormorant', serif;
   position: relative;
 }
 
-header {
+.header {
   position: fixed;
   background-color: rgba(0,0,0,.3);
   color: white;
@@ -30,6 +30,21 @@ header {
   width: 100%;
   padding: 40px 5vw;
   z-index: 100;
+}
+
+.secondary-header {
+  top: -100px;
+  z-index: 1000;
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  100% {
+    transform: translateY(100px);
+  }
 }
 
 .header-logo {
@@ -192,6 +207,7 @@ header {
 }
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;

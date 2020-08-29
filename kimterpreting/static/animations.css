@@ -24,7 +24,7 @@
   animation-fill-mode: forwards;
 }
 
-header {
+.initial-fade-in {
   background-color: transparent;
   animation-name: headerFadeIn;
   animation-duration: 3s;
