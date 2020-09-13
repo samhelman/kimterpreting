@@ -11,16 +11,16 @@ def home():
 
 @app.route('/about')
 def about():
-  return "About"
+  return render_template('about.html', title="About")
 
 @app.route('/contact')
 def contact():
-  return "Contact"
+  return render_template('contact.html', title="Contact")
 
 @app.route('/faq')
 def faq():
-  return "FAQ"
+  return render_template('faq.html', title="FAQ")
 
 @app.route('/terms')
 def terms():
-  return "Terms"
+  return render_template('terms.html', title="Terms and Conditions")

@@ -14,6 +14,10 @@ font-family: 'Cormorant', serif;
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .top {
   z-index: 101;
   background-color: white;
@@ -30,6 +34,10 @@ font-family: 'Cormorant', serif;
   width: 100%;
   padding: 40px 5vw;
   z-index: 100;
+}
+
+.filler {
+  height: 100px;
 }
 
 .secondary-header {
@@ -61,6 +69,9 @@ font-family: 'Cormorant', serif;
   right: 5vw;
   color: white;
   position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
   margin: 0;
   top: 50%;
   transform: translateY(-50%);
@@ -74,7 +85,6 @@ font-family: 'Cormorant', serif;
 .header-links li {
   font-size: 1.2em;
   padding: 0 10px;
-  border-left: 1px solid white;
 }
 
 .header-links a {
@@ -82,7 +92,8 @@ font-family: 'Cormorant', serif;
 }
 
 .header-links li:hover {
-  text-decoration: underline;
+  font-weight: bold;
+  background-color: rgba(0,0,0,.3);
 }
 
 .header-links .first-item {
@@ -95,7 +106,7 @@ font-family: 'Cormorant', serif;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,.9);
+  background-color: rgba(0,0,0,.95);
   opacity: 0;
   visibility: hidden;
   transition: visibility .5s, opacity .5s ease-in;
@@ -119,7 +130,6 @@ font-family: 'Cormorant', serif;
   padding: 10px 0;
   font-size: 1.2em;
   line-height: 1.5em;
-  border-top: 1px solid white;
 }
 
 .mobile-navigation a {
@@ -147,6 +157,16 @@ font-family: 'Cormorant', serif;
 
 .fill-screen {
   min-height: 100vh;
+}
+
+.card {
+  position: relative;
+  padding: 10px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+  margin: 10px;
+  width: 100%;
 }
 
 .title-page {
@@ -188,9 +208,11 @@ font-family: 'Cormorant', serif;
   margin: 10px 10px 0 0;
   font-size: calc(1em + .5vw);
   padding: 5px 10px;
+  color: white;
   border: 2px solid white;
   border-radius: 20px/50%;
   box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  text-decoration: none;
 }
 
 .background-highlight {
@@ -237,11 +259,10 @@ font-family: 'Cormorant', serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vh 5vw;
 }
 
 .logo-container {
-  padding: 0 5vw 5vh 5vw;
+  padding: 2.5vh 5vw;
 }
 
 .logo {
@@ -259,7 +280,6 @@ font-family: 'Cormorant', serif;
 }
 
 footer {
-  position: relative;
   background-color: black;
   width: 100%;
   height: 20vh;
@@ -284,24 +304,31 @@ footer p {
   transition: opacity 1s linear, visibility 1s linear, transform .5s ease-out;
 }
 
-.rates-container {
+.internal-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2vh 2vw;
+  overflow: hidden;
 }
 
-.rates-container h3, .rates-container h4 {
+.internal-container h3, .internal-container h4 {
   text-align: center;
-  padding: 5px;
+  padding: 5px 0;
 }
 
-.rates-container h4 {
+.service h4 {
+  text-align: left;
+  color: indigo;
+}
+
+.internal-container h4 {
   color: indigo;
 }
 
 .rates-content {
-  padding: 2vh 10vw;
+  width: 40vw;
+  max-width: 200px;
 }
 
 .center {
@@ -318,13 +345,71 @@ footer p {
   margin-bottom: 2vh;
 }
 
+.services-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.service {
+  display: block;
+  margin: 10px auto;
+  width: 95%;
+  max-width: 500px;
+}
+
+.service-image {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  border-radius: 3px;
+}
+
+.service h4 {
+  padding: 5px 0;
+}
+
+.heading-page {
+  background-color: indigo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.heading {
+  color: white;
+  margin: 5vw;
+}
+
+.title-page .down {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.down {
+  display: block;
+  margin: 10px auto;
+  background-color: rgba(0,0,0,.3);
+  border-radius: 50%;
+}
+
+.terms-container {
+  position: relative;
+  display: block;
+  padding: 5vh 5vw;
+}
+
 @media only screen and (min-width: 420px) {
   .button-container {
     display: inline-flex;
     margin: auto;
     flex-direction: row;
   }
-  .rates-container {
+  .internal-container {
     flex-direction: row;
   }
   .border {
@@ -334,19 +419,6 @@ footer p {
 }
 
 @media only screen and (min-width: 800px) {
-
-  .header-menu {
-    display: none;
-  }
-
-  .header-links-container {
-    transform: translateY(-20%);
-  }
-
-  .header-links {
-    display: inline-flex;
-    list-style: none;
-  }
 
   .title-content {
     text-align: left;
@@ -384,4 +456,24 @@ footer p {
   .logo-container p {
     font-size: 1em;
   }
+}
+
+@media only screen and (min-width: 920px) {
+
+  .header-menu {
+    display: none;
+  }
+
+  .header-links {
+    display: flex;
+    list-style: none;
+    height: 100%;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
 }
