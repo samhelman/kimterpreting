@@ -69,6 +69,11 @@
     </footer>
 
     <script>
+      //jquery smooth scrolling to scroll down arrow, from css-tricks
+
+    </script>
+
+    <script>
       //event listeners
       menuIcon = document.getElementById('header-menu')
       closeIcon = document.getElementById('menu-close')
@@ -139,13 +144,40 @@
         document.addEventListener("scroll", function() { isTopOfWindow('#main-content') })
 
         //scrolls the main content top the top of the screen
-        function scrollToContent() {
-          var window_height = $(window).height()
-          window.scrollTo(0, window_height)
+        function scrollToContent(el) {
+          var pos = $(el).position().top
+          window.scrollTo(0, pos)
         }
 
-        document.getElementById('scroll-down').addEventListener("click", function() { scrollToContent() })
+        //document.getElementById('scroll-down').addEventListener("click", function() { scrollToContent('#main-content') })
       })
+    </script>
+    <script>
+      //smooth scrolling jquery from w3shools
+      $(document).ready(function(){
+        // Add smooth scrolling to all links
+        $("a").on('click', function(event) {
+      
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+      
+            // Store hash
+            var hash = this.hash;
+      
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800, function(){
+          
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+      });
     </script>
     {% block scripts %}
     {% endblock scripts %}

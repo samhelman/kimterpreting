@@ -6,9 +6,7 @@
     <div class="heading">
       <h1>About Kim</h1>
       <h4>Find out all about me below!</h4>
-      <a>
-        <img id='scroll-down' class="down" src="{{ url_for('static', filename='icons/expand.svg') }}" width="50px">
-      </a>
+      <img id='scroll-down' class="down" src="{{ url_for('static', filename='icons/expand.svg') }}" width="50px">
     </div>
   </div>
   <div id="main-content" class="fill-screen top container">
@@ -90,6 +88,6 @@
       document.addEventListener("scroll", function() { showEl('#nrcpd') })
       document.addEventListener("scroll", function() { showEl('#check') })
 
-    })
+   })
   </script>
 {% endblock %}

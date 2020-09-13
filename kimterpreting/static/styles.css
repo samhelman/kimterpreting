@@ -14,10 +14,6 @@ font-family: 'Cormorant', serif;
   margin: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 a {
   color: indigo;
   text-decoration: none;
