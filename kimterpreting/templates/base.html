@@ -142,14 +142,6 @@
         }
 
         document.addEventListener("scroll", function() { isTopOfWindow('#main-content') })
-
-        //scrolls the main content top the top of the screen
-        function scrollToContent(el) {
-          var pos = $(el).position().top
-          window.scrollTo(0, pos)
-        }
-
-        //document.getElementById('scroll-down').addEventListener("click", function() { scrollToContent('#main-content') })
       })
     </script>
     <script>
