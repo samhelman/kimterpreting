@@ -3,6 +3,10 @@
 .header-logo {
   font-size: calc(1em + 10vw);
   left: 50%;
+  -ms-transform: translate(-50%, +150%);
+  -webkit-transform: translate(-50%, +150%);
+  -moz-transform: translate(-50%, +150%);
+  -o-transform: translate(-50%, +150%);
   transform: translate(-50%, +150%);
   visibility: hidden;
   opacity: 0;
@@ -58,8 +62,12 @@
 
   }
   100% {
-    font-size: 3em;
+    font-size: 3rem;
     left: 5vw;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
     transform: translateY(-50%);
   }
 }
@@ -84,12 +92,20 @@
 
 @media only screen and (min-width: 500px) {
   .header-logo {
+    -ms-transform: translate(-50%, +70%);
+    -webkit-transform: translate(-50%, +70%);
+    -moz-transform: translate(-50%, +70%);
+    -o-transform: translate(-50%, +70%);
     transform: translate(-50%, +70%);
   }
 }
 
 @media only screen and (min-width: 700px) {
   .header-logo {
+    -ms-transform: translate(-50%, +50%);
+    -webkit-transform: translate(-50%, +50%);
+    -moz-transform: translate(-50%, +50%);
+    -o-transform: translate(-50%, +50%);
     transform: translate(-50%, +50%);
   }
 }

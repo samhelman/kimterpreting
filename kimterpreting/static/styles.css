@@ -14,6 +14,12 @@ font-family: 'Cormorant', serif;
   margin: 0;
 }
 
+html {
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
 a {
   color: indigo;
   text-decoration: none;
@@ -52,6 +58,10 @@ a {
 
 @keyframes slideIn {
   100% {
+    -ms-transform: translateY(100px);
+    -webkit-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    -o-transform: translateY(100px);
     transform: translateY(100px);
   }
 }
@@ -63,6 +73,10 @@ a {
   position: absolute;
   margin: 0;
   top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -75,6 +89,10 @@ a {
   align-items: center;
   margin: 0;
   top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -119,6 +137,10 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
+  -ms-transform: translateY(-50%, -50%);
+  -webkit-transform: translateY(-50%, -50%);
+  -moz-transform: translateY(-50%, -50%);
+  -o-transform: translateY(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 100%;
   padding: 0 20vw;
@@ -181,6 +203,10 @@ a {
   padding: 0 5vw;
   position: fixed;
   top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%);
   text-align: center;
   width: 100vw;
@@ -316,6 +342,10 @@ footer p {
 .fade-in {
   opacity: 0;
   visibility: hidden;
+  -ms-transform: translateY(20vh);
+  -webkit-transform: translateY(20vh);
+  -moz-transform: translateY(20vh);
+  -o-transform: translateY(20vh);
   transform: translateY(20vh);
   transition: opacity 1s linear, visibility 1s linear, transform .5s ease-out;
 }
@@ -403,6 +433,10 @@ footer p {
   position: fixed;
   bottom: 20px;
   left: 50%;
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
