@@ -431,12 +431,17 @@ footer p {
 
 .contact p {
   margin: 5px 0;
+  font-size: 0.8em;
 }
 
 .contact .input-field {
   width: 95%;
-  max-width: 300px;
+  max-width: 600px;
   padding: 5px;
+}
+
+.contact textarea {
+  min-height: 200px;
 }
 
 .contact ul {
