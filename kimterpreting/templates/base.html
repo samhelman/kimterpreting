@@ -33,11 +33,10 @@
   <body>
     <header id="header" class="header initial-fade-in">
       <div>
-        <h1 id="header-logo" class="header-logo">Kimterpreting</h1>
+        <a id="logo" href="{{ url_for('home') }}"><h1 id="header-logo" class="header-logo">Kimterpreting</h1></a>
         <div class="header-links-container">
           <img id="header-menu" class="header-menu" src="{{ url_for('static', filename='icons/menu.svg') }}">
           <ul class="header-links">
-            <li><a class="nav-link" href="{{ url_for('home') }}">HOME</a></li>
             <li><a class="nav-link" href="{{ url_for('about') }}">ABOUT</a></li>
             <li><a class="nav-link" href="{{ url_for('contact') }}">CONTACT</a></li>
             <li><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li>
@@ -54,7 +53,6 @@
     <div id="mobile-navigation" class="mobile-navigation">
       <img id="menu-close" class="menu-close" src="{{ url_for('static', filename='icons/close.svg') }}">
       <ul class="mobile-links">
-        <li><a class="nav-link" href="{{ url_for('home') }}">HOME</a></li>
         <li><a class="nav-link" href="{{ url_for('about') }}">ABOUT</a></li>
         <li><a class="nav-link" href="{{ url_for('contact') }}">CONTACT</a></li>
         <li><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li>

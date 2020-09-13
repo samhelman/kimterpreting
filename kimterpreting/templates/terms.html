@@ -10,7 +10,7 @@
     </div>
   </div>
   <div id="main-content" class="fill-screen top container">
-    <div class="card terms-container">
+    <div id="TERMS-1" class="card terms-container fade-in">
       <h1>
         1. Definitions
       </h1>
@@ -30,7 +30,7 @@
         the control of the Interpreter or the Client.
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-2" class="card terms-container fade-in">
       <h1>
         2. Services Provided
       </h1>
@@ -43,7 +43,7 @@
         time, include any additional services.
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-3" class="card terms-container fade-in">
       <h1>
         3. Contracts
       </h1>
@@ -69,7 +69,7 @@
         </ol>
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-4" class="card terms-container fade-in">
       <h1>
         4. Teams
       </h1>
@@ -93,7 +93,7 @@
         complement the Team.
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-5" class="card terms-container fade-in">
       <h1>
         5. Working Hours
       </h1>
@@ -146,7 +146,7 @@
         This is subject to change and individual negotiation.
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-6" class="card terms-container fade-in">
       <h1>
         6. Quotations for Fees
       </h1>
@@ -159,7 +159,7 @@
         addition to the fees, shall be stipulated.
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-7" class="card terms-container fade-in">
       <h1>
         7. Fees and Allowances
       </h1>
@@ -198,7 +198,7 @@
         fee shall be applicable of an additional 50% of the original quoted fee. 
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-8" class="card terms-container fade-in">
       <h1>
         8. Travel and Accommodation
       </h1>
@@ -221,7 +221,7 @@
         Interpreter shall be immediately repaid to the Client.
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-9" class="card terms-container fade-in">
       <h1>
         9. Cancellation
       </h1>
@@ -257,7 +257,7 @@
         </ul> 
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-10" class="card terms-container fade-in">
       <h1>
         10. Substitution of Interpreters
       </h1>
@@ -274,7 +274,7 @@
         from any further liability.
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-11" class="card terms-container fade-in">
       <h1>
         11. Unavoidable Circumstances
       </h1>
@@ -296,7 +296,7 @@
         </ul>
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-12" class="card terms-container fade-in">
       <h1>
         12. Preparation Materials
       </h1>
@@ -339,7 +339,7 @@
         for their safekeeping and immediate return to the Client at the end of the assignment.
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-13" class="card terms-container fade-in">
       <h1>
         13. Working Conditions
       </h1>
@@ -361,7 +361,7 @@
         noise.
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-14" class="card terms-container fade-in">
       <h1>
         14. Recordings
       </h1>
@@ -374,7 +374,7 @@
         broadcast or publication, may incur an additional fee.
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-15" class="card terms-container fade-in">
       <h1>
         15. Complaints and Disputes
       </h1>
@@ -396,7 +396,7 @@
         with English law.
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-16" class="card terms-container fade-in">
       <h1>
         16. Responsibility and Liability
       </h1>
@@ -416,7 +416,7 @@
         <h4>16.5</h4>Consequential damages and liability are expressly excluded.
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-17" class="card terms-container fade-in">
       <h1>
         17. Unfair Competition
       </h1>
@@ -449,7 +449,7 @@
         </ul>
       </p>
     </div>
-    <div class="card terms-container">
+    <div id="TERMS-18" class="card terms-container fade-in">
       <h1>
         18. Applicability and Integrity
       </h1>
@@ -483,7 +483,24 @@
           )
         }
       }
-      document.addEventListener("scroll", function() { showEl('#about') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-1') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-2') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-3') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-4') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-5') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-6') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-7') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-8') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-9') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-10') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-11') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-12') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-13') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-14') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-15') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-16') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-17') })
+      document.addEventListener("scroll", function() { showEl('#TERMS-18') })
 
       function getHeightAsInt(el) {
         var height = $(el).css("height")

@@ -14,15 +14,15 @@
     </div>
   </div>
   <div id="main-content" class="fill-screen top container">
-    <div class="card container">
+    <div id="FAQ-1" class="card services-container fade-in">
       <h2>
         What is British Sign Language?
       </h2>
       <p>
         <a href="https://en.wikipedia.org/wiki/British_Sign_Language" target="_blank">
-          British
+          British Sign Language (BSL) 
         </a> 
-        Sign Language (BSL) is the most common sign language used in the UK. BSL was 
+        is the most common sign language used in the UK. BSL was 
         <a href="http://www.telegraph.co.uk/news/uknews/1425033/Sign-language-wins-official-recognition.html" target="_blank">
           recognised
         </a> 
@@ -39,7 +39,7 @@
         to support spoken English.
       </p>
     </div>
-    <div class="card container">
+    <div id="FAQ-2" class="card services-container fade-in">
       <h2>
         How do I find and book an interpreter?
       </h2>
@@ -57,7 +57,7 @@
         interpreters on your behalf for a fee.
       </p>
     </div>
-    <div class="card container">
+    <div id="FAQ-3" class="card services-container fade-in">
       <h2>
         Why should I book a Qualified Interpreter - my friend knows some sign language, can they help?
       </h2>
@@ -106,7 +106,7 @@
         the highest level of interpreting service and professional conduct.
       </p>
     </div>
-    <div class="card container">
+    <div id="FAQ-4" class="card services-container fade-in">
       <h2>
         ​How many interpreters do I need to book?
       </h2>
@@ -119,7 +119,7 @@
         agency when booking.
       </p>
     </div>
-    <div class="card container">
+    <div id="FAQ-5" class="card services-container fade-in">
       <h2>
         What does the interpreter need from me?
       </h2>
@@ -136,7 +136,7 @@
         It is also helpful for interpreters to have time to discuss any issues on arrival to please allow  time for this.
       </p>
     </div>
-    <div class="card container">
+    <div id="FAQ-6" class="card services-container fade-in">
       <h2>
         What should I think about during the event?
       </h2>
@@ -164,7 +164,7 @@
         For more information about the role of an interpreter, please click here.
       </p>
     </div>
-    <div class="card container">
+    <div id="FAQ-7" class="card services-container fade-in">
       <h2>
         You mentioned that you have a sign name. What on earth is that?
       </h2>
@@ -177,7 +177,7 @@
         long before my sign name, 'cycle', stuck.
       </p>
     </div>
-    <div class="card container">
+    <div id="FAQ-8" class="card services-container fade-in">
       <h2>
         Would you like tea or coffee?
       </h2>
@@ -207,7 +207,14 @@
           )
         }
       }
-      document.addEventListener("scroll", function() { showEl('#about') })
+      document.addEventListener("scroll", function() { showEl('#FAQ-1') })
+      document.addEventListener("scroll", function() { showEl('#FAQ-2') })
+      document.addEventListener("scroll", function() { showEl('#FAQ-3') })
+      document.addEventListener("scroll", function() { showEl('#FAQ-4') })
+      document.addEventListener("scroll", function() { showEl('#FAQ-5') })
+      document.addEventListener("scroll", function() { showEl('#FAQ-6') })
+      document.addEventListener("scroll", function() { showEl('#FAQ-7') })
+      document.addEventListener("scroll", function() { showEl('#FAQ-8') })
 
       function getHeightAsInt(el) {
         var height = $(el).css("height")
@@ -223,6 +230,7 @@
         }
       }
       document.addEventListener("scroll", function() { isTopOfWindow('#main-content') })
+
 
       function scrollToContent() {
         var header_height = getHeightAsInt('#header')

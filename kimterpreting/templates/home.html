@@ -14,7 +14,7 @@
         <a href="{{ url_for('contact') }}" class="button">Contact Me</a>
       </div>
     </div>
-    <img id='scroll-down' class="down" src="{{ url_for('static', filename='icons/expand.svg') }}" width="50px">
+    <img id='scroll-down' class="down animation-4" src="{{ url_for('static', filename='icons/expand.svg') }}" width="50px">
   </div>
   <div id="main-content" class="fill-screen top container">
     <div class="card container">
@@ -107,7 +107,6 @@
       document.addEventListener("scroll", function() { showEl('#rates-disclaimer') })
       document.addEventListener("scroll", function() { showEl('#rates-button') })
       document.addEventListener("scroll", function() { showEl('#services') })
-      document.addEventListener("scroll", function() { showEl('#services-container') })
       document.addEventListener("scroll", function() { showEl('#service_1') })
       document.addEventListener("scroll", function() { showEl('#service_2') })
       document.addEventListener("scroll", function() { showEl('#service_3') })
