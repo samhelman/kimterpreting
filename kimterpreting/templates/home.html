@@ -90,7 +90,7 @@
         return distanceToTop
       }
       function showEl(el) {
-        if (findDistance(el) < .95 * $(window).innerHeight()) {
+        if (findDistance(el) < .95 * $(window).height()) {
           $(el).css(
             {
               opacity: 1,
@@ -126,7 +126,7 @@
 
       function scrollToContent() {
         var header_height = getHeightAsInt('#header')
-        var window_height = $(window).innerHeight()
+        var window_height = window.screen.availHeight
         var height = window_height - header_height
         window.scrollTo(0, height)
       }
