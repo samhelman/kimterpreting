@@ -1,5 +1,6 @@
 from kimterpreting import app
-from flask import render_template
+from flask import render_template, redirect, flash, url_for, request
+from kimterpreting.forms import ContactForm, QuoteForm
 
 @app.route('/')
 def home_animations():
@@ -13,9 +14,13 @@ def home():
 def about():
   return render_template('about.html', title="About")
 
-@app.route('/contact')
-def contact():
-  return render_template('contact.html', title="Contact")
+@app.route('/contact/<string:form_type>', methods=['GET', 'POST'])
+def contact(form_type):
+  if form_type == 'quote':
+    form = QuoteForm()
+  elif form_type == 'message':
+    form = ContactForm()
+  return render_template('contact.html', title="Contact", form=form, method=request.method)
 
 @app.route('/faq')
 def faq():

@@ -210,7 +210,7 @@ a {
   display: flex;
   align-items: center;
   background-color: transparent;
-  margin: 10px 10px 0 0;
+  margin: 5px 5px;
   font-size: calc(1em + .5vw);
   padding: 5px 10px;
   color: white;
@@ -218,6 +218,20 @@ a {
   border-radius: 20px/50%;
   box-shadow: 1px 1px 1px rgba(0,0,0,.3);
   text-decoration: none;
+}
+
+.smaller-button {
+  font-size: initial;
+}
+
+.button.purple {
+  color: indigo;
+  border: 2px solid indigo;
+}
+
+.button.purple:hover {
+  color: white;
+  background-color: indigo;
 }
 
 .background-highlight {
@@ -409,6 +423,57 @@ footer p {
   padding: 5vh 5vw;
 }
 
+.contact label {
+  margin: 5px 0;
+  color: indigo;
+  font-weight: bold;
+}
+
+.contact input {
+  margin: 5px 0;
+}
+
+.contact p {
+  margin: 5px 0;
+}
+
+.contact .input-field {
+  width: 95%;
+  max-width: 300px;
+  padding: 5px;
+}
+
+.contact ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.contact li label{
+  color: black;
+  font-weight: normal;
+}
+
+.alert {
+  padding: 5px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.alert-success {
+  background-color: palegreen;
+  color: seagreen;
+}
+
+.alert-failure {
+  background-color: tomato;
+  color: darkred;
+}
+
+.alert-info {
+  background-color: lightskyblue;
+  color: navy;
+}
+
 @media only screen and (min-width: 420px) {
   .button-container {
     display: inline-flex;
@@ -425,7 +490,11 @@ footer p {
 }
 
 @media only screen and (min-width: 800px) {
-
+  .title-page {
+    background: url(./images/background.jpg) no-repeat center center fixed;
+    background-color: rgba(75,0,130,.95);
+    background-blend-mode: multiply;
+  }
   .title-content {
     text-align: left;
   }
@@ -441,6 +510,9 @@ footer p {
     cursor: pointer;
   }
   .button.orange:hover {
+    border-color: indigo;
+  }
+  .button.purple:hover {
     border-color: indigo;
   }
   .logos {

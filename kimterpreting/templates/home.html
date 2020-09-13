@@ -10,63 +10,61 @@
       <h2>Kim Helman</h2>
       <h1>Registered Sign Language Interpreter</h1>
       <div class="button-container animation-4">
-        <a href="{{ url_for('contact') }}" class="button orange">Get a Quote!</a>
-        <a href="{{ url_for('contact') }}" class="button">Contact Me</a>
+        <a href="/contact/quote" class="button orange">Get a Quote!</a>
+        <a href="/contact/message" class="button">Contact Me</a>
       </div>
     </div>
     <img id='scroll-down' class="down animation-4" src="{{ url_for('static', filename='icons/expand.svg') }}" width="50px">
   </div>
   <div id="main-content" class="fill-screen top container">
-    <div class="card container">
-      <h1 id="services" class="fade-in">Services</h1>
-      <div id="service_3" class="card service fade-in">
-        <img class='service-image' src="{{ url_for('static', filename='images/kim-interpreting.png') }}">
-        <h4>In-Person Interpreting</h4>
-        <p>
-          I offer interpreting services between British Sign Language (BSL) 
-          or Sign Supported English (SSE) and English. This can be in a 
-          professional capacity (ie. meetings, conferences) or a personal 
-          capacity (ie. health appointments, leisure activities). Basically 
-          anywhere that Deaf and hearing people need to communicate with 
-          one another.
-        </p>
-      </div>
-      <div id="service_2" class="card service fade-in">
-        <img class='service-image' src="{{ url_for('static', filename='images/video-interpreting.jpg') }}">
-        <h4>Video Interpreting</h4>
-        <p>
-          I am also able to offer interpretting services online via "video 
-          interpreting". For example video-conferencing and online meetings.
-        </p>
-      </div>
-      <div id="service_1" class="card service fade-in">
-        <img class='service-image' src="{{ url_for('static', filename='images/festival_kim.jpeg') }}">
-        <h4>Events</h4>
-        <p>
-          I am available for events. In the past, I have been lucky enough to with 
-          organisations such as Sense and at national events including Deaf World, 
-          Reading Festival and London Pride. And I would love to work your event too!
-        </p>
-      </div>
-      <div class="container">
-        <h1 id="rates" class="fade-in">Rates</h1>
-        <div id="rates-container" class="internal-container fade-in">
-          <div class="card rates-content">
-            <h3>Half Day</h3>
-            <h4>£130 - £160</h4>
-          </div>
-          <div class="card rates-content">
-            <h3>Full Day</h3>
-            <h4>£240 - £290</h4>
-          </div>
+    <h1 id="services" class="fade-in">Services</h1>
+    <div id="service_3" class="card service fade-in">
+      <img class='service-image' src="{{ url_for('static', filename='images/kim-interpreting.png') }}">
+      <h4>In-Person Interpreting</h4>
+      <p>
+        I offer interpreting services between British Sign Language (BSL) 
+        or Sign Supported English (SSE) and English. This can be in a 
+        professional capacity (ie. meetings, conferences) or a personal 
+        capacity (ie. health appointments, leisure activities). Basically 
+        anywhere that Deaf and hearing people need to communicate with 
+        one another.
+      </p>
+    </div>
+    <div id="service_2" class="card service fade-in">
+      <img class='service-image' src="{{ url_for('static', filename='images/video-interpreting.jpg') }}">
+      <h4>Video Interpreting</h4>
+      <p>
+        I am also able to offer interpretting services online via "video 
+        interpreting". For example video-conferencing and online meetings.
+      </p>
+    </div>
+    <div id="service_1" class="card service fade-in">
+      <img class='service-image' src="{{ url_for('static', filename='images/festival_kim.jpeg') }}">
+      <h4>Events</h4>
+      <p>
+        I am available for events. In the past, I have been lucky enough to with 
+        organisations such as Sense and at national events including Deaf World, 
+        Reading Festival and London Pride. And I would love to work your event too!
+      </p>
+    </div>
+    <div class="container">
+      <h1 id="rates" class="fade-in">Rates</h1>
+      <div id="rates-container" class="internal-container fade-in">
+        <div class="card rates-content">
+          <h3>Half Day</h3>
+          <h4>£130 - £160</h4>
         </div>
-        <p id="rates-disclaimer" class="center mb fade-in">
-          Every interpreting assignment is different; rates will vary depending on many 
-          factors such as the amount of preparation required, timing of the assignment 
-          and location. The above rates should be taken as a rough guide.
-        </p>
-        <a id="rates-button" href="{{ url_for('contact') }}" class="button orange mb fade-in">Get a FREE Quote Now!</a>
+        <div class="card rates-content">
+          <h3>Full Day</h3>
+          <h4>£240 - £290</h4>
+        </div>
       </div>
+      <p id="rates-disclaimer" class="center mb fade-in">
+        Every interpreting assignment is different; rates will vary depending on many 
+        factors such as the amount of preparation required, timing of the assignment 
+        and location. The above rates should be taken as a rough guide.
+      </p>
+      <a id="rates-button" href="/contact/quote" class="button orange mb fade-in">Get a FREE Quote Now!</a>
     </div>
   </div>
 {% endblock content %}
