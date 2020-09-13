@@ -126,7 +126,7 @@
 
       function scrollToContent() {
         var header_height = getHeightAsInt('#header')
-        var window_height = window.screen.availHeight
+        var window_height = $(window).height()
         var height = window_height - header_height
         window.scrollTo(0, height)
       }
