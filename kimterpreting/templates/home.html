@@ -84,7 +84,6 @@
   {% endif %}
   <script>
     $(document).ready(function() {
-
       function findDistance(el) {
         var distanceToTop = $(el).offset().top - $(window).scrollTop()
         return distanceToTop
@@ -108,30 +107,6 @@
       document.addEventListener("scroll", function() { showEl('#service_1') })
       document.addEventListener("scroll", function() { showEl('#service_2') })
       document.addEventListener("scroll", function() { showEl('#service_3') })
-
-      function getHeightAsInt(el) {
-        var height = $(el).css("height")
-        var height = height.replace('px', '')
-        var height = parseFloat(height)
-        return height
-      }
-      function isTopOfWindow(el) {
-        if (findDistance(el) <= 0) {
-          $('#header').addClass('secondary-header').removeClass('initial-fade-in')
-        } else if (findDistance(el) >= getHeightAsInt('#header')) {
-          $('#header').removeClass('secondary-header')
-        }
-      }
-      document.addEventListener("scroll", function() { isTopOfWindow('#main-content') })
-
-      function scrollToContent() {
-        var header_height = getHeightAsInt('#header')
-        var window_height = window.screen.height
-        var height = window_height - header_height
-        window.scrollTo(0, height)
-      }
-
-      document.getElementById('scroll-down').addEventListener("click", function() { scrollToContent() })
 
     })
   </script>

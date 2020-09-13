@@ -19,7 +19,7 @@
   </div>
   <div id="main-content" class="fill-screen top container">
     {% if form.id == 'quote' %}
-      <form action="https://formspree.io/mbjprdjd" method="POST" class="card container contact">
+      <form id="form" action="https://formspree.io/mbjprdjd" method="POST" class="card container contact">
         <h1>Get A Quote!</h1>
         {{ form.hidden_tag() }}
 
@@ -51,7 +51,7 @@
         {{ form.submit(class="button orange") }}
       </form>
     {% else %}
-      <form action="https://formspree.io/mrgozezb" method="POST" class="card container contact">
+      <form id="form" action="https://formspree.io/mrgozezb" method="POST" class="card container contact">
         <h1>Contact Me!</h1>
         {{ form.hidden_tag() }}
 
@@ -85,7 +85,6 @@
 {% block scripts %}
   <script>
     $(document).ready(function() {
-
       function findDistance(el) {
         var distanceToTop = $(el).offset().top - $(window).scrollTop()
         return distanceToTop
@@ -101,31 +100,7 @@
           )
         }
       }
-      document.addEventListener("scroll", function() { showEl('#about') })
-
-      function getHeightAsInt(el) {
-        var height = $(el).css("height")
-        var height = height.replace('px', '')
-        var height = parseFloat(height)
-        return height
-      }
-      function isTopOfWindow(el) {
-        if (findDistance(el) <= 0) {
-          $('#header').addClass('secondary-header').removeClass('initial-fade-in')
-        } else if (findDistance(el) >= getHeightAsInt('#header')) {
-          $('#header').removeClass('secondary-header')
-        }
-      }
-      document.addEventListener("scroll", function() { isTopOfWindow('#main-content') })
-
-      function scrollToContent() {
-        var header_height = getHeightAsInt('#header')
-        var window_height = $(window).height()
-        var height = window_height - header_height
-        window.scrollTo(0, height)
-      }
-
-      document.getElementById('scroll-down').addEventListener("click", function() { scrollToContent() })
+      document.addEventListener("scroll", function() { showEl('#form') })
 
     })
   </script>

@@ -99,6 +99,53 @@
           mobileMenu.style.display = "none"
         }
       }
+      $(document).ready(function() {
+
+        //returns the distance of an element from the top of the window
+        function findDistance(el) {
+          var distanceToTop = $(el).offset().top - $(window).scrollTop()
+          return distanceToTop
+        }
+        //displays an element (for use with the fade-in class)
+        function showEl(el) {
+          if (findDistance(el) < .95 * $(window).height()) {
+            $(el).css(
+              {
+                opacity: 1,
+                visibility: 'visible',
+                transform: 'none',
+              }
+            )
+          }
+        }
+
+        //returns the height of an element as an integer
+        function getHeightAsInt(el) {
+          var height = $(el).css("height")
+          var height = height.replace('px', '')
+          var height = parseFloat(height)
+          return height
+        }
+
+        //displays the nav bar if the given element is at the top of the window
+        function isTopOfWindow(el) {
+          if (findDistance(el) < 0) {
+            $('#header').addClass('secondary-header').removeClass('initial-fade-in')
+          } else if (findDistance(el) >= getHeightAsInt('#header')) {
+            $('#header').removeClass('secondary-header')
+          }
+        }
+
+        document.addEventListener("scroll", function() { isTopOfWindow('#main-content') })
+
+        //scrolls the main content top the top of the screen
+        function scrollToContent() {
+          var window_height = $(window).height()
+          window.scrollTo(0, window_height)
+        }
+
+        document.getElementById('scroll-down').addEventListener("click", function() { scrollToContent() })
+      })
     </script>
     {% block scripts %}
     {% endblock scripts %}
