@@ -2,9 +2,6 @@
 
 .header-logo {
   font-size: 15vw;
-  font-size: -webkit-calc(1em + 10vw);
-  font-size: -moz-calc(1em + 10vw);
-  font-size: calc(1em + 10vw);
   left: 50%;
   -ms-transform: translate(-50%, +150%);
   -webkit-transform: translate(-50%, +150%);
