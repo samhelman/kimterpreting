@@ -194,7 +194,8 @@ a {
 }
 
 .title-page {
-  background: rgba(75,0,130,.5) url(./images/background.png) no-repeat center right fixed;
+  background: rgba(75,0,130,.95) url(./images/background.png) no-repeat center right fixed;
+  background-image: url(./images/background.png);
   background-blend-mode: multiply;
 }
 
@@ -527,6 +528,7 @@ footer p {
 @media only screen and (min-width: 800px) {
   .title-page {
     background: rgba(75,0,130,.95) url(./images/background.png) no-repeat center center fixed;
+    background-image: url(./images/background.png);
     background-blend-mode: multiply;
   }
   .title-content {
