@@ -194,12 +194,10 @@ a {
 }
 
 .title-page {
-  background-color: rgba(75,0,130,.95);
   background-image: url(./images/background-mobile.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-blend-mode: multiply;
 }
 
 .title-content {
