@@ -194,7 +194,7 @@ a {
 }
 
 .title-page {
-  background: rgba(75,0,130,.95) url(./images/background.png) no-repeat center right fixed;
+  background: rgba(75,0,130,.5) url(./images/background.png) no-repeat center right fixed;
   background-blend-mode: multiply;
 }
 
