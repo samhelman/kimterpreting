@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
 
 .header-logo {
+  font-size: 15vw;
+  font-size: -webkit-calc(1em + 10vw);
+  font-size: -moz-calc(1em + 10vw);
   font-size: calc(1em + 10vw);
   left: 50%;
   -ms-transform: translate(-50%, +150%);
@@ -62,7 +65,7 @@
 
   }
   100% {
-    font-size: 3rem;
+    font-size: 3em;
     left: 5vw;
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
