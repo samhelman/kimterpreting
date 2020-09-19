@@ -45,28 +45,31 @@
         </div>
       </div>
     </header>
-    <main>
-      {% block content %}
-      {% endblock %}
-    </main>
-    
-    <div id="mobile-navigation" class="mobile-navigation">
-      <img id="menu-close" class="menu-close" src="{{ url_for('static', filename='icons/close.svg') }}">
-      <ul class="mobile-links">
-        <li><a class="nav-link" href="{{ url_for('about') }}">ABOUT</a></li>
-        <li><a class="nav-link" href="/contact/message">CONTACT</a></li>
-        <li><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li>
-        <li><a class="nav-link" href="{{ url_for('terms') }}">TERMS AND CONDITIONS</a></li>
-      </ul>
+    <div class="wrapper">
+      <main>
+        {% block content %}
+        {% endblock %}
+      </main>
+      
+      <div id="mobile-navigation" class="mobile-navigation">
+        <img id="menu-close" class="menu-close" src="{{ url_for('static', filename='icons/close.svg') }}">
+        <ul class="mobile-links">
+          <li><a class="nav-link" href="{{ url_for('about') }}">ABOUT</a></li>
+          <li><a class="nav-link" href="/contact/message">CONTACT</a></li>
+          <li><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li>
+          <li><a class="nav-link" href="{{ url_for('terms') }}">TERMS AND CONDITIONS</a></li>
+        </ul>
+      </div>
+  
+      <footer>
+        <p>
+          Copyright &#169; 
+          <a href="{{ url_for('home') }}">Kimterpreting</a> 
+          All Rights Reserved
+        </p>
+      </footer>
     </div>
 
-    <footer>
-      <p>
-        Copyright &#169; 
-        <a href="{{ url_for('home') }}">Kimterpreting</a> 
-        All Rights Reserved
-      </p>
-    </footer>
 
     <script>
       //event listeners
